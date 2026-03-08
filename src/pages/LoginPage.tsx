@@ -21,7 +21,7 @@ export const LoginPage = () => {
 
   return (
     <div className="min-h-screen bg-linear-to from-slate-900 to-slate-800 flex items-center justify-center">
-      <div className="bg-white rounded-lg shadow-xl p-8 w-full max-w-md">
+      <div className="bg-white rounded-lg sm:shadow-xl p-8 w-full max-w-md">
         <h1 className="text-3xl font-bold text-center text-slate-900 mb-2">
           OrderFlow
         </h1>
@@ -69,7 +69,7 @@ export const LoginPage = () => {
             onClick={handleDemoLogin}
             className="w-full bg-gray-200 text-gray-800 py-2 rounded-lg font-medium hover:bg-gray-300 transition"
           >
-            Demo Login
+            Easy Sign In
           </button>
         </div>
 

@@ -1,4 +1,5 @@
 import { AppLayout } from "../components/layout/AppLayout";
+import { OrderDetailDrawer } from "../components/orders/OrderDetailDrawer";
 import { OrdersTable } from "../components/orders/OrdersTable";
 import { useOrdersStore } from "../store/useOrdersStore";
 import type { OrderStatus } from "../types/order";
@@ -48,36 +49,9 @@ export const OrdersPage = () => {
             <option value="Cancelled">Cancelled</option>
           </select>
         </div>
-
-        {/* Orders List */}
-        {/* <div className="mt-6 space-y-3">
-          {filteredOrders.length === 0 ? (
-            <p className="text-gray-500">No orders found</p>
-          ) : (
-            filteredOrders.map((order) => (
-              <div key={order.id} className="bg-white p-4 rounded-lg shadow">
-                <div className="flex justify-between items-center">
-                  <div>
-                    <p className="font-semibold text-gray-900">{order.id}</p>
-                    <p className="text-sm text-gray-600">
-                      {order.customerName}
-                    </p>
-                  </div>
-                  <div className="text-right">
-                    <p className="text-sm font-medium text-gray-900">
-                      ${order.total.toFixed(2)}
-                    </p>
-                    <span className="text-xs px-2 py-1 rounded bg-blue-100 text-blue-800">
-                      {order.status}
-                    </span>
-                  </div>
-                </div>
-              </div>
-            ))
-          )}
-        </div> */}
       </div>
       <OrdersTable data={filteredOrders} />
+      <OrderDetailDrawer />
     </AppLayout>
   );
 };

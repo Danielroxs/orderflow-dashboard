@@ -11,6 +11,7 @@ import { orderColumns } from "./columns";
 import { useState } from "react";
 import { formatCurrency } from "../../utils/formatCurrency";
 import { formatDate } from "../../utils/formatDate";
+import { useUIStore } from "../../store/useUIStore";
 
 interface OrdersTableProps {
   data: Order[];
@@ -19,6 +20,7 @@ interface OrdersTableProps {
 export const OrdersTable = ({ data }: OrdersTableProps) => {
   const [sorting, setSorting] = useState<SortingState>([]);
   const [pagination, setPagination] = useState({ pageIndex: 0, pageSize: 10 });
+  const { openOrderDetail } = useUIStore();
 
   const table = useReactTable({
     data,
@@ -29,6 +31,7 @@ export const OrdersTable = ({ data }: OrdersTableProps) => {
     getCoreRowModel: getCoreRowModel(),
     getSortedRowModel: getSortedRowModel(),
     getPaginationRowModel: getPaginationRowModel(),
+    meta: { onViewOrder: openOrderDetail },
   });
 
   return (
@@ -65,9 +68,17 @@ export const OrdersTable = ({ data }: OrdersTableProps) => {
                   </span>
                 </div>
 
-                <p className="mt-3 text-sm font-medium text-gray-900">
-                  {formatCurrency(order.total)}
-                </p>
+                <div className="mt-3 flex items-center justify-between">
+                  <p className="text-sm font-medium text-gray-900">
+                    {formatCurrency(order.total)}
+                  </p>
+                  <button
+                    onClick={() => openOrderDetail(order.id)}
+                    className="px-3 py-1.5 bg-blue-600 text-white text-xs font-medium rounded hover:bg-blue-700 transition-colors"
+                  >
+                    Ver
+                  </button>
+                </div>
               </div>
             );
           })

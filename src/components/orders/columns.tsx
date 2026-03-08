@@ -41,4 +41,23 @@ export const orderColumns: ColumnDef<Order>[] = [
     header: "Total",
     cell: ({ row }) => formatCurrency(row.original.total),
   },
+  {
+    id: "actions",
+    header: "Actions",
+    cell: ({ row, table }) => {
+      const meta = table.options.meta as { onViewOrder?: (id: string) => void };
+
+      return (
+        <button
+          onClick={(e) => {
+            e.stopPropagation();
+            meta?.onViewOrder?.(row.original.id);
+          }}
+          className="px-3 py-1.5 bg-blue-600 text-white text-xs font-medium rounded hover:bg-blue-700 transition-colors"
+        >
+          Ver
+        </button>
+      );
+    },
+  },
 ];
