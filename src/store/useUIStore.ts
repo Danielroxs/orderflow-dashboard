@@ -9,8 +9,11 @@ interface UIStore {
   closeOrderDetail: () => void;
 }
 
+const isDesktop =
+  typeof window !== "undefined" ? window.innerWidth >= 1024 : true;
+
 export const useUIStore = create<UIStore>((set) => ({
-  isSidebarOpen: true,
+  isSidebarOpen: isDesktop,
   selectedOrderId: null,
   isOrderDetailOpen: false,
   toggleSidebar: () =>
