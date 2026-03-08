@@ -23,7 +23,7 @@ export const DashboardPage = () => {
         <p className="text-gray-600 mt-2">Welcome to OrderFlow</p>
 
         {/* Metrics Grid */}
-        <div className="grid grid-cols-4 gap-6 mt-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6 mt-6 lg:mt-8">
           <MetricCard title="Total Orders" value={totalOrders} icon="📦" />
           <MetricCard
             title="Total Revenue"

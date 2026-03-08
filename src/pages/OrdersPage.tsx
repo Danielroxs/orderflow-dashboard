@@ -25,20 +25,20 @@ export const OrdersPage = () => {
         <h1 className="text-3xl font-bold text-gray-900">Orders</h1>
         <p className="text-gray-600 mt-2">Manage your orders here</p>
         {/* Filters */}
-        <div className="flex gap-4 mt-6">
+        <div className="mt-6 flex flex-col gap-3 sm:flex-row">
           <input
             type="text"
             placeholder="Search by ID, customer, email..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500"
+            className="w-full sm:flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
           <select
             value={statusFilter}
             onChange={(e) =>
               setStatusFilter(e.target.value as OrderStatus | "all")
             }
-            className="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-blue-500"
+            className="w-full sm:w-56 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
           >
             <option value="all">All Status</option>
             <option value="Pending">Pending</option>
