@@ -1,4 +1,5 @@
 import { AppLayout } from "../components/layout/AppLayout";
+import { OrdersTable } from "../components/orders/OrdersTable";
 import { useOrdersStore } from "../store/useOrdersStore";
 import type { OrderStatus } from "../types/order";
 
@@ -35,7 +36,7 @@ export const OrdersPage = () => {
           <select
             value={statusFilter}
             onChange={(e) =>
-              setStatusFilter((e.target.value as OrderStatus) || "all")
+              setStatusFilter(e.target.value as OrderStatus | "all")
             }
             className="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-blue-500"
           >
@@ -48,8 +49,8 @@ export const OrdersPage = () => {
           </select>
         </div>
 
-        {/* rders List */}
-        <div className="mt-6 space-y-3">
+        {/* Orders List */}
+        {/* <div className="mt-6 space-y-3">
           {filteredOrders.length === 0 ? (
             <p className="text-gray-500">No orders found</p>
           ) : (
@@ -74,8 +75,9 @@ export const OrdersPage = () => {
               </div>
             ))
           )}
-        </div>
+        </div> */}
       </div>
+      <OrdersTable data={filteredOrders} />
     </AppLayout>
   );
 };
