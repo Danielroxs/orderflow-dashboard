@@ -12,22 +12,22 @@ export const RecentOrdersTable = () => {
       </div>
 
       <div className="overflow-x-auto">
-        <table className="min-w-[640px] w-full">
+        <table className="w-full">
           <thead className="bg-gray-50">
             <tr>
-              <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase sm:px-6">
+              <th className="px-2 py-3 text-left text-xs font-medium text-gray-500 uppercase sm:px-6">
                 Order ID
               </th>
-              <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase sm:px-6">
+              <th className="px-2 py-3 text-left text-xs font-medium text-gray-500 uppercase sm:px-6">
                 Customer
               </th>
-              <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase sm:px-6">
+              <th className="px-2 py-3 text-left text-xs font-medium text-gray-500 uppercase sm:px-6">
                 Date
               </th>
-              <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase sm:px-6">
+              <th className="px-2 py-3 text-left text-xs font-medium text-gray-500 uppercase sm:px-6">
                 Status
               </th>
-              <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase sm:px-6">
+              <th className="px-2 py-3 text-left text-xs font-medium text-gray-500 uppercase sm:px-6">
                 Total
               </th>
             </tr>
@@ -35,21 +35,21 @@ export const RecentOrdersTable = () => {
           <tbody className="divide-y divide-gray-200">
             {recentOrders.map((order) => (
               <tr key={order.id} className="hover:bg-gray-50">
-                <td className="px-4 py-4 text-sm font-medium text-gray-900 sm:px-6">
+                <td className="px-2 py-4 text-sm font-medium text-gray-900 sm:px-6">
                   {order.id}
                 </td>
-                <td className="px-4 py-4 text-sm text-gray-600 sm:px-6">
+                <td className="px-2 py-4 text-sm text-gray-600 sm:px-6">
                   {order.customerName}
                 </td>
-                <td className="px-4 py-4 text-sm text-gray-600 sm:px-6">
+                <td className="px-2 py-4 text-sm text-gray-600 sm:px-6">
                   {order.date}
                 </td>
-                <td className="px-4 py-4 text-sm sm:px-6">
+                <td className="px-2 py-4 text-sm sm:px-6">
                   <span className="px-2 py-1 rounded bg-blue-100 text-blue-800 text-xs font-medium">
                     {order.status}
                   </span>
                 </td>
-                <td className="px-4 py-4 text-sm font-medium text-gray-900 sm:px-6">
+                <td className="px-2 py-4 text-sm font-medium text-gray-900 sm:px-6">
                   {formatCurrency(order.total)}
                 </td>
               </tr>

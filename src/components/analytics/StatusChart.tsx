@@ -24,7 +24,7 @@ const StatusChart = ({ orders }: StatusChartProps) => {
       <h3 className="mb-4 text-sm font-semibold text-gray-900">
         Orders by Status
       </h3>
-      <div className="h-72">
+      <div className="h-64 sm:h-72">
         <ResponsiveContainer width="100%" height="100%">
           <PieChart>
             <Pie data={data} dataKey="count" nameKey="status" outerRadius={110}>

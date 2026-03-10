@@ -1,73 +1,94 @@
-# React + TypeScript + Vite
+# OrderFlow - Order Management Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Dashboard administrativo para gestión de pedidos, construido con React, TypeScript y Tailwind CSS.  
+Este proyecto está diseñado para demostrar habilidades reales de Front-End en interfaces de negocio: tablas, filtros, métricas, gráficas, estado global y experiencia responsive.
 
-Currently, two official plugins are available:
+## Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- App: [https://orderflow-dashboard-sigma.vercel.app/login](https://orderflow-dashboard-sigma.vercel.app/login)
+- Repository: [https://github.com/Danielroxs/orderflow-dashboard](https://github.com/Danielroxs/orderflow-dashboard)
 
-## React Compiler
+## Core Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Demo authentication with protected routes
+- Private app layout with sidebar + topbar
+- Dashboard with KPI cards
+- Recent orders section
+- Orders table with search, filters, sorting and pagination
+- Order detail drawer with status update
+- Analytics with revenue and status charts
+- Settings page with profile and UI preferences
+- Loading and empty states
+- Responsive design for desktop, tablet and mobile
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- React
+- TypeScript
+- Vite
+- Tailwind CSS
+- React Router
+- Zustand
+- TanStack Table
+- Recharts
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Project Structure
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+```txt
+src/
+  components/
+    analytics/
+    common/
+    dashboard/
+    layout/
+    orders/
+  data/
+  pages/
+  routes/
+  store/
+  types/
+  utils/
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Screenshots
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Login
+![Login Screen](./screenshots/Login.png)
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Dashboard
+![Dashboard Screen](./screenshots/Dashboard.png)
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Orders
+![Orders Screen](./screenshots/Orders.png)
+
+### Order Detail Drawer
+![Order Detail Drawer](./screenshots/order-detail-drawer.png)
+
+### Analytics
+![Analytics Screen](./screenshots/analytics.png)
+
+### Settings
+![Settings Screen](./screenshots/settings.png)
+
+Getting Started
+1. Install dependencies
+npm install
+2. Run development server
+npm run dev
+3. Build for production
+npm run build
+4. Preview production build
+npm run preview
+
+Routing Note (Vercel)
+This project uses client-side routing with React Router.
+Include a vercel.json rewrite config to make direct route reloads work in production.
+
+Why This Project Matters
+OrderFlow is focused on practical Front-End skills used in real admin products:
+
+Data-heavy UI
+Reusable component architecture
+Global state management
+UX for operational workflows
+Maintainable TypeScript codebase
 ```
