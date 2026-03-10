@@ -71,7 +71,7 @@ export const AppLayout = ({ children }: AppLayoutProps) => {
       {/* Main Content */}
       <div className="flex-1 flex flex-col min-w-0">
         {/* Topbar */}
-        <header className="bg-white border-b border-gray-200 px-4 py-3 flex items-center lg:justify-end justify-between lg:px-6 lg:py-4">
+        <header className="sticky top-0 z-30 bg-white border-b border-gray-200 px-4 py-3 flex items-center lg:justify-end justify-between lg:px-6 lg:py-4">
           <button
             onClick={toggleSidebar}
             className="p-2 hover:bg-gray-100 rounded text-lg lg:hidden"
@@ -92,7 +92,7 @@ export const AppLayout = ({ children }: AppLayoutProps) => {
         </header>
 
         {/* Content Area */}
-        <main className="flex-1 overflow-auto p-4 lg:p-6">{children}</main>
+        <main className="flex-1 overflow-y-auto p-4 lg:p-6">{children}</main>
       </div>
     </div>
   );
