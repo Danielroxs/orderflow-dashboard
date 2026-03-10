@@ -1,12 +1,28 @@
-import { AppLayout } from "../components/layout/AppLayout";
 import { OrderDetailDrawer } from "../components/orders/OrderDetailDrawer";
 import { OrdersTable } from "../components/orders/OrdersTable";
+import { LoadingSpinner } from "../components/common/LoadingSpinner";
+import { EmptyState } from "../components/common/EmptyState";
 import { useOrdersStore } from "../store/useOrdersStore";
 import type { OrderStatus } from "../types/order";
 
 export const OrdersPage = () => {
-  const { orders, searchTerm, statusFilter, setSearchTerm, setStatusFilter } =
-    useOrdersStore();
+  const {
+    orders,
+    searchTerm,
+    statusFilter,
+    setSearchTerm,
+    setStatusFilter,
+    isLoading,
+  } = useOrdersStore();
+
+  if (isLoading) {
+    return (
+      <div>
+        <h1 className="text-3xl font-bold text-gray-900">Orders</h1>
+        <LoadingSpinner />
+      </div>
+    );
+  }
 
   const filteredOrders = orders.filter((order) => {
     const matchesSearch =
@@ -21,7 +37,7 @@ export const OrdersPage = () => {
   });
 
   return (
-    <AppLayout>
+    <>
       <div>
         <h1 className="text-3xl font-bold text-gray-900">Orders</h1>
         <p className="text-gray-600 mt-2">Manage your orders here</p>
@@ -49,9 +65,19 @@ export const OrdersPage = () => {
             <option value="Cancelled">Cancelled</option>
           </select>
         </div>
+
+        {/* Empty State */}
+        {filteredOrders.length === 0 ? (
+          <EmptyState
+            title="No Orders Found"
+            message="Try adjusting your search to find what you're looking for"
+            icon="🔍"
+          />
+        ) : (
+          <OrdersTable data={filteredOrders} />
+        )}
       </div>
-      <OrdersTable data={filteredOrders} />
       <OrderDetailDrawer />
-    </AppLayout>
+    </>
   );
 };

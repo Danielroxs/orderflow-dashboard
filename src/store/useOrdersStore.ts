@@ -10,6 +10,8 @@ interface OrdersStore {
   sortDirection: "asc" | "desc";
   currentPage: number;
   pageSize: number;
+  isLoading: boolean;
+  error: string | null;
   setSearchTerm: (term: string) => void;
   setStatusFilter: (status: OrderStatus | "all") => void;
   setSorting: (
@@ -28,6 +30,8 @@ export const useOrdersStore = create<OrdersStore>((set) => ({
   sortDirection: "desc",
   currentPage: 1,
   pageSize: 10,
+  isLoading: false,
+  error: null,
   setSearchTerm: (term: string) => set({ searchTerm: term, currentPage: 1 }),
   setStatusFilter: (status: OrderStatus | "all") =>
     set({ statusFilter: status, currentPage: 1 }),
