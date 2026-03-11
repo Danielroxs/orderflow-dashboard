@@ -48,47 +48,71 @@ src/
   store/
   types/
   utils/
+```
 
 ## Screenshots
 
 ### Login
-![Login Screen](./screenshots/Login.png)
+
+![Login Screen](./src/screenshots/login.png)
 
 ### Dashboard
-![Dashboard Screen](./screenshots/Dashboard.png)
+
+![Dashboard Screen](./src/screenshots/dashboard.png)
 
 ### Orders
-![Orders Screen](./screenshots/Orders.png)
+
+![Orders Screen](./src/screenshots/orders.png)
 
 ### Order Detail Drawer
-![Order Detail Drawer](./screenshots/order-detail-drawer.png)
+
+![Order Detail Drawer](./src/screenshots/order-detail-drawer.png)
 
 ### Analytics
-![Analytics Screen](./screenshots/analytics.png)
+
+![Analytics Screen](./src/screenshots/analytics.png)
 
 ### Settings
-![Settings Screen](./screenshots/settings.png)
 
-Getting Started
+![Settings Screen](./src/screenshots/settings.png)
+
+## Getting Started
+
 1. Install dependencies
-npm install
-2. Run development server
-npm run dev
-3. Build for production
-npm run build
-4. Preview production build
-npm run preview
 
-Routing Note (Vercel)
+```bash
+npm install
+```
+
+2. Run development server
+
+```bash
+npm run dev
+```
+
+3. Build for production
+
+```bash
+npm run build
+```
+
+4. Preview production build
+
+```bash
+npm run preview
+```
+
+## Routing Note (Vercel)
+
 This project uses client-side routing with React Router.
 Include a vercel.json rewrite config to make direct route reloads work in production.
 
-Why This Project Matters
+## Why This Project Matters
+
 OrderFlow is focused on practical Front-End skills used in real admin products:
 
-Data-heavy UI
-Reusable component architecture
-Global state management
-UX for operational workflows
-Maintainable TypeScript codebase
-```
+- Data-heavy UI
+- Reusable component architecture
+- Global state management
+- UX for operational workflows
+- Maintainable TypeScript codebase
