@@ -54,15 +54,15 @@ src/
 
 ### Login
 
-![Login Screen](./src/screenshots/login.png)
+![Login Screen](./src/screenshots/Login.png)
 
 ### Dashboard
 
-![Dashboard Screen](./src/screenshots/dashboard.png)
+![Dashboard Screen](./src/screenshots/Dashboard.png)
 
 ### Orders
 
-![Orders Screen](./src/screenshots/orders.png)
+![Orders Screen](./src/screenshots/Orders.png)
 
 ### Order Detail Drawer
 
